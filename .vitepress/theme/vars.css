@@ -1,0 +1,333 @@
+/**
+ * Maps the LootEngine tokens onto VitePress's default theme variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ *
+ * Dark is the brand's home ground and the site default. Light mode sits on
+ * Bone with Ink type. Flare fails as text on Bone (1.6:1), so light mode uses
+ * deepened accents that each clear 4.5:1 on Bone and on their soft washes.
+ * -------------------------------------------------------------------------- */
+
+/**
+ * Light (Bone)
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-bg: var(--le-bone);
+  --vp-c-bg-alt: #e3e2d9;
+  --vp-c-bg-elv: #f4f3ee;
+  --vp-c-bg-soft: #e3e2d9;
+
+  --vp-c-border: #c4c7be;
+  --vp-c-divider: #d5d5cb;
+  --vp-c-gutter: #d5d5cb;
+
+  --vp-c-text-1: var(--le-ink);
+  --vp-c-text-2: #4a544e;
+  --vp-c-text-3: #6b756f;
+
+  --vp-c-default-1: #4a544e;
+  --vp-c-default-2: #c4c7be;
+  --vp-c-default-3: #d5d5cb;
+  --vp-c-default-soft: rgb(10 12 11 / 0.06);
+
+  --vp-c-brand-1: #9a4b12;
+  --vp-c-brand-2: #7d3c0d;
+  --vp-c-brand-3: var(--le-flare);
+  --vp-c-brand-soft: rgb(255 122 26 / 0.12);
+
+  --vp-c-tip-1: #44652c;
+  --vp-c-tip-2: #36521f;
+  --vp-c-tip-3: var(--le-field-deep);
+  --vp-c-tip-soft: rgb(110 165 68 / 0.16);
+
+  --vp-c-note-1: #3f6587;
+  --vp-c-note-2: #30506d;
+  --vp-c-note-3: var(--le-info);
+  --vp-c-note-soft: rgb(121 180 234 / 0.2);
+
+  --vp-c-important-1: var(--vp-c-brand-1);
+  --vp-c-important-2: var(--vp-c-brand-2);
+  --vp-c-important-3: var(--vp-c-brand-3);
+  --vp-c-important-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: #7c5a12;
+  --vp-c-warning-2: #63480e;
+  --vp-c-warning-3: #ffbd59;
+  --vp-c-warning-soft: rgb(255 189 89 / 0.24);
+
+  --vp-c-danger-1: #a3433a;
+  --vp-c-danger-2: #85352e;
+  --vp-c-danger-3: var(--le-danger);
+  --vp-c-danger-soft: rgb(240 123 112 / 0.16);
+
+  --vp-c-success-1: var(--vp-c-tip-1);
+  --vp-c-success-2: var(--vp-c-tip-2);
+  --vp-c-success-3: var(--vp-c-tip-3);
+  --vp-c-success-soft: var(--vp-c-tip-soft);
+
+  --vp-c-caution-1: var(--vp-c-danger-1);
+  --vp-c-caution-2: var(--vp-c-danger-2);
+  --vp-c-caution-3: var(--vp-c-danger-3);
+  --vp-c-caution-soft: var(--vp-c-danger-soft);
+
+  /* Theme-only values that change with the appearance */
+  --le-panel-bg: linear-gradient(180deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.2)), var(--vp-c-bg-elv);
+  --le-panel-highlight: inset 0 1px 0 rgb(255 255 255 / 0.6);
+  --le-inline-code-border: rgb(10 12 11 / 0.1);
+  --le-button-alt-bg: rgb(10 12 11 / 0.03);
+  --le-button-alt-hover-bg: rgb(10 12 11 / 0.07);
+  --le-button-alt-hover-border: #a7aea4;
+  --le-gradient-text: linear-gradient(100deg, #d06a14 0%, #b8540d 45%, #9a4b12 100%);
+  --le-contour: rgb(10 12 11 / 0.08);
+  --le-contour-index: rgb(255 122 26 / 0.22);
+  --le-glow: rgb(255 122 26 / 0.14);
+  --le-glow-field: rgb(110 165 68 / 0.1);
+  --le-selection-bg: rgb(255 166 48 / 0.35);
+  --le-selection-text: var(--le-ink);
+}
+
+/**
+ * Dark (Ink) — the default
+ * -------------------------------------------------------------------------- */
+
+.dark {
+  --vp-c-bg: var(--le-ink);
+  --vp-c-bg-alt: var(--le-ink-2);
+  --vp-c-bg-elv: var(--le-surface-2);
+  --vp-c-bg-soft: var(--le-surface);
+
+  --vp-c-border: var(--le-line-strong);
+  --vp-c-divider: var(--le-line);
+  --vp-c-gutter: var(--le-line);
+
+  --vp-c-text-1: var(--le-bone);
+  --vp-c-text-2: var(--le-muted);
+  --vp-c-text-3: var(--le-faint);
+
+  --vp-c-default-1: var(--le-muted);
+  --vp-c-default-2: var(--le-line-strong);
+  --vp-c-default-3: var(--le-surface-3);
+  --vp-c-default-soft: rgb(167 175 169 / 0.1);
+
+  --vp-c-brand-1: var(--le-flare);
+  --vp-c-brand-2: #ffbd59;
+  --vp-c-brand-3: var(--le-flare);
+  --vp-c-brand-soft: rgb(255 166 48 / 0.12);
+
+  --vp-c-tip-1: var(--le-field);
+  --vp-c-tip-2: #b8e48f;
+  --vp-c-tip-3: var(--le-field-deep);
+  --vp-c-tip-soft: rgb(155 211 106 / 0.12);
+
+  --vp-c-note-1: var(--le-info);
+  --vp-c-note-2: #9cc8f0;
+  --vp-c-note-3: #4f8fca;
+  --vp-c-note-soft: rgb(121 180 234 / 0.12);
+
+  --vp-c-warning-1: var(--le-flare-soft);
+  --vp-c-warning-2: #ffe3aa;
+  --vp-c-warning-3: #ffbd59;
+  --vp-c-warning-soft: rgb(255 215 137 / 0.1);
+
+  --vp-c-danger-1: var(--le-danger);
+  --vp-c-danger-2: #f59a91;
+  --vp-c-danger-3: #d9574b;
+  --vp-c-danger-soft: rgb(240 123 112 / 0.12);
+
+  --le-panel-bg: linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0.012)), var(--le-surface);
+  --le-panel-highlight: inset 0 1px 0 rgb(255 255 255 / 0.04);
+  --le-inline-code-border: var(--le-line);
+  --le-button-alt-bg: rgb(255 255 255 / 0.03);
+  --le-button-alt-hover-bg: rgb(255 255 255 / 0.07);
+  --le-button-alt-hover-border: #4a584f;
+  --le-gradient-text: var(--le-gradient-flare);
+  --le-contour: rgb(236 235 228 / 0.075);
+  --le-contour-index: rgb(255 166 48 / 0.16);
+  --le-glow: rgb(255 122 26 / 0.16);
+  --le-glow-field: rgb(155 211 106 / 0.07);
+  --le-selection-bg: rgb(255 166 48 / 0.35);
+  --le-selection-text: #ffffff;
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-font-family-base: var(--le-font-sans);
+  --vp-font-family-mono: var(--le-font-mono);
+}
+
+/**
+ * Code
+ *
+ * Code blocks stay dark in both appearances, like the XML panels on
+ * lootengine.io, so one syntax theme (lootengine-code.mts) serves both.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-code-font-size: 0.875em;
+  --vp-code-line-height: 1.75;
+
+  --vp-code-color: var(--vp-c-text-1);
+  --vp-code-bg: var(--vp-c-default-soft);
+  --vp-code-link-color: var(--vp-c-brand-1);
+  --vp-code-link-hover-color: var(--vp-c-brand-2);
+
+  --vp-code-block-color: var(--le-bone);
+  --vp-code-block-bg: var(--le-surface);
+  --vp-code-block-divider-color: var(--le-line);
+  --vp-code-lang-color: var(--le-faint);
+
+  --vp-code-line-highlight-color: rgb(255 166 48 / 0.1);
+  --vp-code-line-number-color: #6f7a73;
+
+  --vp-code-line-diff-add-color: rgb(155 211 106 / 0.12);
+  --vp-code-line-diff-add-symbol-color: var(--le-field);
+  --vp-code-line-diff-remove-color: rgb(240 123 112 / 0.12);
+  --vp-code-line-diff-remove-symbol-color: var(--le-danger);
+  --vp-code-line-warning-color: rgb(255 215 137 / 0.1);
+  --vp-code-line-error-color: rgb(240 123 112 / 0.14);
+
+  --vp-code-copy-code-border-color: var(--le-line-strong);
+  --vp-code-copy-code-bg: var(--le-surface-2);
+  --vp-code-copy-code-hover-border-color: #4a584f;
+  --vp-code-copy-code-hover-bg: var(--le-surface-3);
+  --vp-code-copy-code-active-text: var(--le-muted);
+
+  --vp-code-tab-divider: var(--le-line);
+  --vp-code-tab-text-color: var(--le-faint);
+  --vp-code-tab-bg: var(--le-surface);
+  --vp-code-tab-hover-text-color: var(--le-bone);
+  --vp-code-tab-active-text-color: var(--le-bone);
+  --vp-code-tab-active-bar-color: var(--le-flare);
+}
+
+.dark {
+  --vp-code-bg: var(--le-surface-3);
+}
+
+/**
+ * Buttons: Flare with Ink text for the main action, outlined for the rest
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--le-flare-ink);
+  --vp-button-brand-bg: var(--le-flare);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--le-flare-ink);
+  --vp-button-brand-hover-bg: #ffb143;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--le-flare-ink);
+  --vp-button-brand-active-bg: #ff9420;
+
+  --vp-button-alt-border: var(--vp-c-border);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: var(--le-button-alt-bg);
+  --vp-button-alt-hover-border: var(--le-button-alt-hover-border);
+  --vp-button-alt-hover-text: var(--vp-c-text-1);
+  --vp-button-alt-hover-bg: var(--le-button-alt-hover-bg);
+  --vp-button-alt-active-border: var(--le-button-alt-hover-border);
+  --vp-button-alt-active-text: var(--vp-c-text-1);
+  --vp-button-alt-active-bg: var(--le-button-alt-bg);
+}
+
+/**
+ * Nav: transparent over the home hero, frosted Ink once it scrolls
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-nav-logo-height: 2rem;
+  --vp-nav-bg-color: rgb(236 235 228 / 0.88);
+  --vp-nav-backdrop-filter: blur(14px) saturate(1.4);
+  --vp-nav-screen-bg-color: var(--vp-c-bg);
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+  --vp-backdrop-bg-color: rgb(10 12 11 / 0.62);
+}
+
+.dark {
+  --vp-nav-bg-color: rgb(10 12 11 / 0.88);
+}
+
+/**
+ * Home hero
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-home-hero-name-background: none;
+  --vp-home-hero-image-background-image: radial-gradient(closest-side, var(--le-glow), transparent);
+  --vp-home-hero-image-filter: blur(48px);
+}
+
+/**
+ * Custom blocks and badges: each type gets its soft wash and a matching edge
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-font-size: 0.9375rem;
+  --vp-custom-block-code-font-size: 0.875rem;
+
+  --vp-custom-block-info-border: var(--vp-c-divider);
+  --vp-custom-block-info-text: var(--vp-c-text-1);
+  --vp-custom-block-info-bg: var(--vp-c-bg-soft);
+  --vp-custom-block-info-code-bg: var(--vp-c-default-soft);
+
+  --vp-custom-block-note-border: color-mix(in srgb, var(--vp-c-note-3) 32%, transparent);
+  --vp-custom-block-note-text: var(--vp-c-text-1);
+  --vp-custom-block-note-bg: var(--vp-c-note-soft);
+  --vp-custom-block-note-code-bg: var(--vp-c-note-soft);
+
+  --vp-custom-block-tip-border: color-mix(in srgb, var(--vp-c-tip-3) 34%, transparent);
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-tip-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-tip-soft);
+
+  --vp-custom-block-important-border: color-mix(in srgb, var(--vp-c-important-3) 32%, transparent);
+  --vp-custom-block-important-text: var(--vp-c-text-1);
+  --vp-custom-block-important-bg: var(--vp-c-important-soft);
+  --vp-custom-block-important-code-bg: var(--vp-c-important-soft);
+
+  --vp-custom-block-warning-border: color-mix(in srgb, var(--vp-c-warning-3) 36%, transparent);
+  --vp-custom-block-warning-text: var(--vp-c-text-1);
+  --vp-custom-block-warning-bg: var(--vp-c-warning-soft);
+  --vp-custom-block-warning-code-bg: var(--vp-c-warning-soft);
+
+  --vp-custom-block-danger-border: color-mix(in srgb, var(--vp-c-danger-3) 34%, transparent);
+  --vp-custom-block-danger-text: var(--vp-c-text-1);
+  --vp-custom-block-danger-bg: var(--vp-c-danger-soft);
+  --vp-custom-block-danger-code-bg: var(--vp-c-danger-soft);
+
+  --vp-custom-block-caution-border: var(--vp-custom-block-danger-border);
+  --vp-custom-block-caution-text: var(--vp-custom-block-danger-text);
+  --vp-custom-block-caution-bg: var(--vp-custom-block-danger-bg);
+  --vp-custom-block-caution-code-bg: var(--vp-custom-block-danger-code-bg);
+
+  --vp-custom-block-details-border: var(--vp-c-divider);
+  --vp-custom-block-details-text: var(--vp-c-text-1);
+  --vp-custom-block-details-bg: var(--vp-c-bg-soft);
+  --vp-custom-block-details-code-bg: var(--vp-c-default-soft);
+
+  --vp-badge-info-border: var(--vp-c-divider);
+  --vp-badge-note-border: var(--vp-custom-block-note-border);
+  --vp-badge-tip-border: var(--vp-custom-block-tip-border);
+  --vp-badge-important-border: var(--vp-custom-block-important-border);
+  --vp-badge-warning-border: var(--vp-custom-block-warning-border);
+  --vp-badge-danger-border: var(--vp-custom-block-danger-border);
+  --vp-badge-caution-border: var(--vp-custom-block-caution-border);
+}
+
+/**
+ * Local search
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-local-search-bg: var(--vp-c-bg);
+  --vp-local-search-result-bg: var(--vp-c-bg-soft);
+  --vp-local-search-result-border: var(--vp-c-divider);
+  --vp-local-search-result-selected-bg: var(--vp-c-brand-soft);
+  --vp-local-search-result-selected-border: var(--vp-c-brand-1);
+  --vp-local-search-highlight-bg: var(--vp-c-brand-3);
+  --vp-local-search-highlight-text: var(--le-flare-ink);
+}

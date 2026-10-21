@@ -1,0 +1,61 @@
+/**
+ * LootEngine "Flare & Field" tokens, as published in the brand pack.
+ *
+ * Keep the layout mostly dark: roughly 55% Ink, 25% surfaces, 12% Bone,
+ * 6% Flare and 2% Field. Flare works because there's little of it.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* Primary */
+  --le-ink: #0a0c0b;
+  --le-bone: #ecebe4;
+  --le-flare: #ffa630;
+
+  /* Accents */
+  --le-flare-hot: #ff7a1a;
+  --le-flare-soft: #ffd789;
+  --le-flare-ink: #1a1004;
+  --le-field: #9bd36a;
+  --le-field-deep: #6ea544;
+  --le-danger: #f07b70;
+  --le-info: #79b4ea;
+
+  /* Green-tinted neutrals, never pure grey */
+  --le-ink-2: #0d100e;
+  --le-surface: #111513;
+  --le-surface-2: #161b18;
+  --le-surface-3: #1c221e;
+  --le-line: #26302a;
+  --le-line-strong: #34403a;
+  --le-muted: #a7afa9;
+  --le-faint: #848e87;
+
+  /* Washes and edges, for chips, callouts and selected states */
+  --le-flare-wash: rgb(255 166 48 / 0.08);
+  --le-flare-edge: rgb(255 166 48 / 0.3);
+  --le-field-wash: rgb(155 211 106 / 0.1);
+
+  /* For one key phrase in a headline, once per screen. Never body text. */
+  --le-gradient-flare: linear-gradient(
+    100deg,
+    var(--le-flare-soft) 0%,
+    var(--le-flare) 42%,
+    var(--le-flare-hot) 100%
+  );
+
+  /* Primary button face, from lootengine.io */
+  --le-gradient-button: linear-gradient(180deg, #ffbd59 0%, var(--le-flare) 55%, #ff9420 100%);
+
+  /* Typography: Space Grotesk for headings, Inter for text, JetBrains Mono for files and labels */
+  --le-font-display: 'Space Grotesk Variable', 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --le-font-sans: 'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --le-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Cascadia Mono', Consolas, ui-monospace, monospace;
+
+  /* Corners: rounded, never sharp, never fully round except for chips */
+  --le-radius-control: 8px;
+  --le-radius-card: 13px;
+  --le-radius-panel: 20px;
+
+  --le-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --le-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}

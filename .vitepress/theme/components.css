@@ -1,0 +1,581 @@
+/**
+ * Component styling for the LootEngine docs.
+ *
+ * Several selectors repeat a class or add a parent so they outrank the
+ * default theme's scoped styles regardless of stylesheet order.
+ *
+ * Nothing user-authored is forced to uppercase: the brand's name rule says
+ * "LootEngine" must never be set in capitals, and sidebar groups, table
+ * headers and callout titles are all text an author might put it in.
+ * -------------------------------------------------------------------------- */
+
+/**
+ * Base
+ * -------------------------------------------------------------------------- */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.dark {
+  color-scheme: dark;
+  scrollbar-color: var(--le-line-strong) transparent;
+}
+
+::selection {
+  background: var(--le-selection-bg);
+  color: var(--le-selection-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--le-flare);
+  outline-offset: 3px;
+}
+
+/**
+ * Nav
+ * -------------------------------------------------------------------------- */
+
+.VPNavBarTitle .title .logo {
+  margin-right: 0;
+}
+
+.VPNavBar .VPNavBarMenuLink {
+  font-size: 0.9375rem;
+}
+
+/**
+ * Sidebar: group headings as quiet mono labels, Flare marks where you are
+ * -------------------------------------------------------------------------- */
+
+.VPSidebar .VPSidebarItem.level-0 > .item > .text {
+  padding-bottom: 0.375rem;
+  font-family: var(--le-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--vp-c-text-3);
+}
+
+/**
+ * Outline aside
+ * -------------------------------------------------------------------------- */
+
+.VPDocAsideOutline .content .outline-title {
+  font-family: var(--le-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+}
+
+.VPDocAsideOutline .content .outline-link.active {
+  color: var(--vp-c-brand-1);
+}
+
+/**
+ * Buttons: Flare face with Ink text, outlined for anything secondary
+ * -------------------------------------------------------------------------- */
+
+.VPButton.VPButton.medium,
+.VPButton.VPButton.big {
+  border-radius: var(--le-radius-card);
+}
+
+.VPButton.VPButton {
+  transition:
+    transform 0.35s var(--le-ease-out-expo),
+    box-shadow 0.35s var(--le-ease-out-expo),
+    color 0.2s,
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.VPButton.VPButton:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.VPButton.VPButton.brand {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: var(--le-gradient-button);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.45),
+    inset 0 -1px 0 rgb(0 0 0 / 0.12),
+    0 1px 2px rgb(0 0 0 / 0.4),
+    0 8px 24px -6px rgb(255 140 30 / 0.45);
+}
+
+.VPButton.VPButton.brand:hover {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    inset 0 -1px 0 rgb(0 0 0 / 0.12),
+    0 1px 2px rgb(0 0 0 / 0.4),
+    0 14px 34px -8px rgb(255 140 30 / 0.65);
+}
+
+/* The light sweep from lootengine.io's primary button */
+.VPButton.VPButton.brand::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.5) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .VPButton.VPButton.brand:hover::after {
+    transform: translateX(120%);
+    transition: transform 0.9s var(--le-ease-out-expo);
+  }
+}
+
+/**
+ * Home hero
+ * -------------------------------------------------------------------------- */
+
+.VPHome {
+  position: relative;
+  isolation: isolate;
+}
+
+.VPHero .heading .name,
+.VPHero .heading .text {
+  max-width: 20ch;
+  font-family: var(--le-font-display);
+  font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.VPHero .heading .name + .text {
+  margin-top: 0.5rem;
+  font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--vp-c-text-2);
+}
+
+.VPHero .main .tagline {
+  max-width: 40rem;
+  padding-top: 1.5rem;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+
+.VPHero .main .tagline code {
+  font-family: var(--le-font-mono);
+  font-size: 0.92em;
+  color: var(--vp-c-text-1);
+}
+
+.VPHero .main .actions {
+  padding-top: 2rem;
+}
+
+.VPHero .actions .VPButton.medium {
+  padding: 0 1.35rem;
+  line-height: 2.875rem;
+  font-size: 1rem;
+}
+
+/* Discord mark on the hero's Discord action (VPButton escapes its text, so it's drawn here) */
+.VPHero .actions .VPButton[href^="https://discord.gg"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.VPHero .actions .VPButton[href^="https://discord.gg"]::before {
+  content: '';
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.VPHero .image-container .image-src {
+  max-width: 11rem;
+}
+
+@media (min-width: 40rem) {
+  .VPHero .image-container .image-src {
+    max-width: 14rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  .VPHero .image-container .image-src {
+    max-width: 17.5rem;
+  }
+}
+
+/* Gradient text for one key phrase per screen: <span class="le-gradient"> */
+.le-gradient {
+  background: var(--le-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/**
+ * Home features: panels with an outlined Lucide icon in Flare
+ * -------------------------------------------------------------------------- */
+
+.VPHome .VPFeatures .VPFeature {
+  position: relative;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--le-radius-card);
+  background: var(--le-panel-bg);
+  box-shadow: var(--le-panel-highlight);
+}
+
+.VPHome .VPFeatures .VPFeature.link:hover {
+  border-color: var(--le-flare-edge);
+}
+
+.VPFeature .box .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--le-flare-edge);
+  border-radius: var(--le-radius-control);
+  background-color: var(--le-flare-wash);
+  color: var(--vp-c-brand-1);
+}
+
+.VPFeature .box .icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.VPFeature .box .title {
+  font-family: var(--le-font-display);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.VPFeature .box .details {
+  padding-top: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/**
+ * Footer: legal lines on a recessed band
+ * -------------------------------------------------------------------------- */
+
+html .Layout .VPFooter {
+  background-color: var(--vp-c-bg-alt);
+}
+
+.VPFooter .container .message,
+.VPFooter .container .copyright {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--vp-c-text-3);
+}
+
+.VPFooter .container .message {
+  margin: 0 auto 0.25rem;
+  max-width: 60ch;
+}
+
+/**
+ * Doc content
+ * -------------------------------------------------------------------------- */
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.7;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  font-family: var(--le-font-display);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.vp-doc h1 {
+  font-size: clamp(2rem, 1.6rem + 1.5vw, 2.625rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.vp-doc h2 {
+  font-size: 1.625rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.vp-doc h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc h4 {
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+}
+
+.vp-doc a {
+  text-decoration-color: color-mix(in srgb, var(--vp-c-brand-1) 40%, transparent);
+  text-underline-offset: 0.2em;
+  transition:
+    color 0.2s,
+    text-decoration-color 0.2s;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: currentColor;
+}
+
+.vp-doc .header-anchor {
+  text-decoration: none;
+}
+
+.vp-doc :not(pre) > code {
+  border: 1px solid var(--le-inline-code-border);
+  border-radius: 5px;
+  padding: 0.125rem 0.375rem;
+}
+
+.vp-doc blockquote {
+  border-left-color: var(--vp-c-brand-3);
+}
+
+.vp-doc hr {
+  border-top-color: var(--vp-c-divider);
+}
+
+.vp-doc kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.45rem;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 0.4rem;
+  background-color: var(--vp-c-bg-soft);
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / 0.2);
+  font-family: var(--le-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.dark .vp-doc kbd {
+  background-color: var(--le-surface-3);
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / 0.35);
+}
+
+/* Tables */
+
+.vp-doc table {
+  width: fit-content;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--le-radius-card);
+}
+
+.vp-doc tr {
+  border-top: 0;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-bg-soft);
+  font-family: var(--le-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--vp-c-text-3);
+}
+
+.vp-doc th:first-child {
+  border-top-left-radius: calc(var(--le-radius-card) - 1px);
+}
+
+.vp-doc th:last-child {
+  border-top-right-radius: calc(var(--le-radius-card) - 1px);
+}
+
+/**
+ * Custom blocks: a wash of the type's colour with a matching hairline
+ * -------------------------------------------------------------------------- */
+
+.custom-block {
+  border-radius: var(--le-radius-card);
+}
+
+.vp-doc .custom-block p {
+  line-height: 1.65;
+}
+
+.custom-block .custom-block-title {
+  font-family: var(--le-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.custom-block.note .custom-block-title {
+  color: var(--vp-c-note-1);
+}
+
+.custom-block.tip .custom-block-title {
+  color: var(--vp-c-tip-1);
+}
+
+.custom-block.important .custom-block-title {
+  color: var(--vp-c-important-1);
+}
+
+.custom-block.warning .custom-block-title {
+  color: var(--vp-c-warning-1);
+}
+
+.custom-block.danger .custom-block-title,
+.custom-block.caution .custom-block-title {
+  color: var(--vp-c-danger-1);
+}
+
+.custom-block.info .custom-block-title,
+.custom-block.details summary {
+  color: var(--vp-c-text-2);
+}
+
+/* Badges follow the brand's chips: pill, wash and hairline */
+.VPBadge.VPBadge {
+  border-radius: 999px;
+  padding: 0 0.5rem;
+  font-weight: 500;
+}
+
+/**
+ * Code blocks: Ink panels like lootengine.io's XML view, in both appearances
+ * -------------------------------------------------------------------------- */
+
+/* Show XML as typed: no ligatures turning <!-- or => into arrows */
+.vp-doc code {
+  font-variant-ligatures: none;
+}
+
+/* Below 40rem code blocks run edge to edge, so the hairline starts above it */
+@media (min-width: 40rem) {
+  .vp-doc div[class*='language-'] {
+    border-radius: var(--le-radius-card);
+    box-shadow: inset 0 0 0 1px var(--le-line);
+  }
+}
+
+.vp-doc [class*='language-'] > span.lang {
+  font-family: var(--le-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.vp-doc [class*='language-'] code .highlighted {
+  box-shadow: inset 2px 0 0 var(--le-flare);
+}
+
+.vp-doc [class*='language-'] code .highlighted.warning {
+  box-shadow: inset 2px 0 0 var(--le-flare-soft);
+}
+
+.vp-doc [class*='language-'] code .highlighted.error {
+  box-shadow: inset 2px 0 0 var(--le-danger);
+}
+
+.vp-doc .line-numbers-wrapper {
+  border-right-color: var(--le-line);
+  font-family: var(--le-font-mono);
+}
+
+/* Code groups: the tab strip and its block read as one panel */
+@media (min-width: 40rem) {
+  .vp-code-group .tabs {
+    border-radius: var(--le-radius-card) var(--le-radius-card) 0 0;
+    box-shadow: inset 0 0 0 1px var(--le-line);
+  }
+
+  .vp-doc .vp-code-group div[class*='language-'] {
+    border-radius: 0 0 var(--le-radius-card) var(--le-radius-card);
+  }
+}
+
+.vp-code-group .tabs label {
+  font-family: var(--le-font-mono);
+  font-size: 0.8125rem;
+}
+
+/**
+ * Doc footer pager
+ * -------------------------------------------------------------------------- */
+
+.VPDocFooter .pager .pager-link {
+  border-radius: var(--le-radius-card);
+  background: var(--le-panel-bg);
+  transition: border-color 0.2s;
+}
+
+.VPDocFooter .pager .pager-link:hover {
+  border-color: var(--le-flare-edge);
+}
+
+.VPDocFooter .pager-link .desc {
+  font-family: var(--le-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+}
+
+.VPDocFooter .pager-link .title {
+  font-family: var(--le-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPButton.VPButton,
+  .VPButton.VPButton.brand::after {
+    transition: none;
+  }
+}
