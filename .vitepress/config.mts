@@ -5,6 +5,10 @@ import lootengineCode from './lootengine-code.mts'
 export default defineConfig({
   srcDir: "docs",
 
+  // Cloudflare serves /guide/installing from guide/installing.html, so links
+  // drop the .html (see wrangler.jsonc)
+  cleanUrls: true,
+
   title: "LootEngine",
   description: "The visual editor for your DayZ loot economy",
 
@@ -32,7 +36,8 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
       { text: 'Reference', link: '/reference/fields', activeMatch: '/reference/' },
-      { text: 'Help', link: '/help/troubleshooting', activeMatch: '/help/' }
+      { text: 'Help', link: '/help/troubleshooting', activeMatch: '/help/' },
+      { text: 'lootengine.io', link: 'https://lootengine.io' }
     ],
 
     sidebar: [

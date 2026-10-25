@@ -1,0 +1,15 @@
+// Cloudflare Worker for the LootEngine docs. It serves the VitePress build as
+// static assets, with no Worker script.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lootengine-docs",
+  "compatibility_date": "2026-10-25",
+  "assets": {
+    "directory": "./.vitepress/dist",
+    // /guide/installing serves guide/installing.html, and /guide/ serves
+    // guide/index.html. Matches cleanUrls in .vitepress/config.mts.
+    "html_handling": "auto-trailing-slash",
+    // Unknown paths get VitePress's 404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  }
+}
