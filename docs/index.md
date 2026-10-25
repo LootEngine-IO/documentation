@@ -12,8 +12,8 @@ hero:
     alt: LootEngine
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get started
+      link: /guide/
     - theme: alt
       text: Join our Discord
       link: https://discord.gg/N2tYjZuNNV

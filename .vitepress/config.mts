@@ -30,19 +30,70 @@ export default defineConfig({
     siteTitle: false,
 
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
+      { text: 'Reference', link: '/reference/fields', activeMatch: '/reference/' },
+      { text: 'Help', link: '/help/troubleshooting', activeMatch: '/help/' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Getting started',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Introduction', link: '/guide/' },
+          { text: 'Installing LootEngine', link: '/guide/installing' },
+          { text: 'First-time setup', link: '/guide/setup' },
+          { text: 'Loading a mission folder', link: '/guide/missions' },
+          { text: 'A tour of the editor', link: '/guide/tour' }
+        ]
+      },
+      {
+        text: 'Editing loot',
+        items: [
+          { text: 'Finding items', link: '/guide/finding-items' },
+          { text: 'Editing loot items', link: '/guide/editing-items' },
+          { text: 'Adding and removing items', link: '/guide/adding-items' },
+          { text: 'Checking for problems', link: '/guide/problems' },
+          { text: 'Saving your changes', link: '/guide/saving' },
+          { text: 'Restoring from a backup', link: '/guide/backups' }
+        ]
+      },
+      {
+        text: 'Mods and loadouts',
+        items: [
+          { text: 'Loading mods', link: '/guide/mods' },
+          { text: 'Loadout editor', link: '/guide/loadout-editor' }
+        ]
+      },
+      {
+        text: 'The app',
+        items: [
+          { text: 'Updating LootEngine', link: '/guide/updating' }
+        ]
+      },
+      {
+        text: 'Reference',
+        items: [
+          { text: 'Loot fields', link: '/reference/fields' },
+          { text: 'Keyboard shortcuts', link: '/reference/shortcuts' },
+          { text: 'Files and folders', link: '/reference/files' }
+        ]
+      },
+      {
+        text: 'Help',
+        items: [
+          { text: 'Troubleshooting', link: '/help/troubleshooting' },
+          { text: 'Support', link: '/help/support' }
         ]
       }
     ],
+
+    search: {
+      provider: 'local'
+    },
+
+    outline: {
+      level: [2, 3]
+    },
 
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/N2tYjZuNNV' }
