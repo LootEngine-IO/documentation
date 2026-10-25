@@ -108,5 +108,9 @@ export default defineConfig({
       message: 'LootEngine is an independent tool, not affiliated with or endorsed by Bohemia Interactive. DayZ is a trademark of Bohemia Interactive a.s.',
       copyright: 'LootEngine and the LootEngine emblem are owned by Baker Software.'
     }
+  },
+
+  sitemap: {
+    hostname: 'https://docs.lootengine.io',
   }
 })
