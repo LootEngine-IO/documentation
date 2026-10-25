@@ -110,6 +110,10 @@ export default defineConfig({
     }
   },
 
+  // Reads each page's last git commit time. The sitemap uses it for <lastmod>,
+  // and the default theme shows it as "Last updated" under each page
+  lastUpdated: true,
+
   sitemap: {
     hostname: 'https://docs.lootengine.io',
   }
