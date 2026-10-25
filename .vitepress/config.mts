@@ -9,7 +9,7 @@ export default defineConfig({
   // drop the .html (see wrangler.jsonc)
   cleanUrls: true,
 
-  title: "LootEngine",
+  title: "LootEngine Documentation",
   description: "The visual editor for your DayZ loot economy",
 
   // Flare & Field is dark by design; light mode stays available from the switch
