@@ -2,16 +2,17 @@
 
 LootEngine runs on Windows and Linux.
 
-::: info Coming soon
-LootEngine isn’t out yet. Join the [Discord](https://discord.gg/N2tYjZuNNV) or the waitlist at [lootengine.io](https://lootengine.io) to hear first when Early Access opens. It will be free to download and use.
+::: info Available in Early Access
+LootEngine is available in Early Access, free to download and use. Get the latest version from the [download page](https://lootengine.io/download).
 :::
 
 ## Windows
 
 LootEngine for Windows comes as an installer (`LootEngine_<version>_x64-setup.exe`).
 
-1. Run the installer and follow the steps.
-2. Start LootEngine from the Start menu.
+1. Download `LootEngine_<version>_x64-setup.exe` from the [download page](https://lootengine.io/download).
+2. Run the installer and follow the steps.
+3. Start LootEngine from the Start menu.
 
 The installer is code signed by Baker Software.
 
@@ -19,7 +20,7 @@ The installer is code signed by Baker Software.
 
 LootEngine for Linux comes as an AppImage, a single file that runs on most distributions without installing.
 
-1. Download `LootEngine_<version>_amd64.AppImage`.
+1. Download `LootEngine_<version>_amd64.AppImage` from the [download page](https://lootengine.io/download).
 2. Make it executable, either from your file manager’s properties or in a terminal:
 
    ```bash

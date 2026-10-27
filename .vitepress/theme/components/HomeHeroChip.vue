@@ -1,25 +1,35 @@
 <script setup lang="ts">
 // Renders `hero.chip` from the home page frontmatter as a status chip above the heading.
+// Set `hero.chipLink` to make the chip a link.
 import { useData } from 'vitepress'
 
 const { frontmatter } = useData()
 </script>
 
 <template>
-  <p v-if="frontmatter.hero?.chip" class="HomeHeroChip">
-    <span class="dot" aria-hidden="true">
-      <span class="ping" />
-    </span>
-    {{ frontmatter.hero.chip }}
+  <p v-if="frontmatter.hero?.chip" class="HomeHeroChip-wrap">
+    <component
+      :is="frontmatter.hero.chipLink ? 'a' : 'span'"
+      :href="frontmatter.hero.chipLink"
+      class="HomeHeroChip"
+    >
+      <span class="dot" aria-hidden="true">
+        <span class="ping" />
+      </span>
+      {{ frontmatter.hero.chip }}
+    </component>
   </p>
 </template>
 
 <style scoped>
+.HomeHeroChip-wrap {
+  margin: 0 0 1.5rem;
+}
+
 .HomeHeroChip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0 0 1.5rem;
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--le-flare-edge);
   border-radius: 999px;
@@ -32,6 +42,15 @@ const { frontmatter } = useData()
 
 .dark .HomeHeroChip {
   color: var(--le-flare-soft);
+}
+
+a.HomeHeroChip {
+  text-decoration: none;
+  transition: border-color 0.25s;
+}
+
+a.HomeHeroChip:hover {
+  border-color: var(--le-flare);
 }
 
 .dot,

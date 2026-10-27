@@ -3,7 +3,8 @@
 layout: home
 
 hero:
-  chip: Coming soon for Windows & Linux
+  chip: Available in Early Access for Windows & Linux
+  chipLink: https://lootengine.io/download
   name: "LootEngine Documentation"
   text: 'The visual editor for your <span class="le-gradient">DayZ loot economy</span>'
   tagline: 'LootEngine is a desktop editor for DayZ’s Central Economy. It turns <code>types.xml</code> into a visual card grid with real 3D item icons, mod support and lossless saves.'
@@ -12,6 +13,9 @@ hero:
     alt: LootEngine
   actions:
     - theme: brand
+      text: Download
+      link: https://lootengine.io/download
+    - theme: alt
       text: Get started
       link: /guide/
     - theme: alt

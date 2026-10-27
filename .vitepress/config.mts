@@ -37,6 +37,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
       { text: 'Reference', link: '/reference/fields', activeMatch: '/reference/' },
       { text: 'Help', link: '/help/troubleshooting', activeMatch: '/help/' },
+      { text: 'Download', link: 'https://lootengine.io/download' },
       { text: 'lootengine.io', link: 'https://lootengine.io' }
     ],
 

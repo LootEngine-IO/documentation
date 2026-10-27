@@ -2,8 +2,8 @@
 
 The loadout editor sets what an item spawns with: the optics, magazines, suppressors and other attachments that come on a weapon, and the condition it spawns in. It edits your mission’s `cfgspawnabletypes.xml`, with the item’s 3D model and attachment slots in front of you.
 
-::: warning Coming in Early Access
-The loadout editor isn’t in the current build of LootEngine yet. This page describes how it works so far, and the details may change before it ships. Weapon loadouts come first, followed by zombie loadouts.
+::: warning Not in the current build yet
+The loadout editor isn’t in the current Early Access build of LootEngine yet. It will arrive in an Early Access update, first on the [beta channel](./updating#release-channels). This page describes how it works so far, and the details may change before it ships. Weapon loadouts come first, followed by zombie loadouts.
 :::
 
 ## Opening the loadout editor
