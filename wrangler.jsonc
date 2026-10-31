@@ -11,5 +11,12 @@
     "html_handling": "auto-trailing-slash",
     // Unknown paths get VitePress's 404.html with a real 404 status.
     "not_found_handling": "404-page"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
   }
 }
