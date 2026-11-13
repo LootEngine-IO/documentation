@@ -387,6 +387,21 @@ html .Layout .VPFooter {
   box-shadow: inset 0 -2px 0 rgb(0 0 0 / 0.35);
 }
 
+/* Screenshots: a hairline and the card radius, so the app's dark UI doesn't melt into the page */
+
+.vp-doc img.screenshot {
+  display: block;
+  margin: 1.25rem 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--le-radius-card);
+}
+
+.vp-doc a:has(> img.screenshot) {
+  display: block;
+  width: fit-content;
+  cursor: zoom-in;
+}
+
 /* Tables */
 
 .vp-doc table {

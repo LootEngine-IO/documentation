@@ -41,7 +41,7 @@ LootEngine checks the new channel straight away and offers its latest release, t
 Switching from beta to stable offers the latest stable release even when it’s an earlier version than the beta you have, so you can get back onto stable. LootEngine warns you when that’s the case. Select **Stay on beta** to keep your current version and channel.
 
 ::: info
-Betas are where new features such as the [loadout editor](./loadout-editor) appear first. Feedback on them is very welcome in the [Discord](https://discord.gg/N2tYjZuNNV).
+Betas are where new features such as the [Loadout Editor](./loadout-editor/) appear first. Feedback on them is very welcome in the [Discord](https://discord.gg/N2tYjZuNNV).
 :::
 
 ## “Updates are only available in installed builds”

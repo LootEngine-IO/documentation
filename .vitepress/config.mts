@@ -64,10 +64,19 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Mods and loadouts',
+        text: 'Loadout Editor',
         items: [
-          { text: 'Loading mods', link: '/guide/mods' },
-          { text: 'Loadout editor', link: '/guide/loadout-editor' }
+          { text: 'Overview', link: '/guide/loadout-editor/' },
+          { text: 'The 3D view', link: '/guide/loadout-editor/model' },
+          { text: 'Attachments and spawn chances', link: '/guide/loadout-editor/attachments' },
+          { text: 'Spawn condition', link: '/guide/loadout-editor/condition' },
+          { text: 'Files, saving and problems', link: '/guide/loadout-editor/files' }
+        ]
+      },
+      {
+        text: 'Mods',
+        items: [
+          { text: 'Loading mods', link: '/guide/mods' }
         ]
       },
       {
